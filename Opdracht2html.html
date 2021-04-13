@@ -1,0 +1,38 @@
+<!-- Opdracht 2:
+Maak een tekst-invoerveld.
+Maak een knop.
+In dat invoerveld kan ik als gebruiker iets intypen.
+Dat eerste veld gebruik ik om een woord in te typen.
+
+Als ik op de knop klik, krijg ik een alert als er de letter e in zit.
+Zit er geen letter e in, dan gebeurd er niks. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 2</title>
+    <style>
+        
+    </style>
+    <script>
+        function ControleerLetter() {
+            var x = document.getElementById("invoer").value;
+            for(i = 0; i < x.length; i++){
+                if (x.charAt(i) == 'e') {
+                    alert ('Er zit een "e" in')
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2> Opdracht 2: "Zit er een E in?" </h2>
+    <div> Vul in onderstaand tekstvak een woord in.</div>
+
+    <input type = "text" id = "invoer">
+    <input type = 'button' value = 'Klik hier' onclick="ControleerLetter()">
+</body>
+</html>

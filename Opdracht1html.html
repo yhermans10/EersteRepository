@@ -1,0 +1,37 @@
+<!-- Opdracht 1:
+Maak een tekst-invoerveld.
+Maak een knop.
+In dat invoerveld kan ik als gebruiker iets intypen.
+Als ik hallo intyp en dan op de knop klik komt er een alert met Welkom
+Als ik doei intyp en dan op de knop klik komt er een alert met Tot de volgende keer.
+In andere gevallen gebeurd er niks. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 1</title>
+    <style>
+        
+    </style>
+    <script>
+    function ControleerWoord() { 
+        var x = document.getElementById("invoer").value;
+        if (x == 'hallo') {
+            alert("Welkom");
+            }
+        if(x == 'doei'){
+            alert("Tot de volgende keer");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2> Opdracht 1: "Vriendelijk groeten" </h2>
+    <div> Vul in onderstaand tekstvak een woord in.</div>
+    <input type = "text" id = "invoer">
+    <input type = 'button' value = 'Klik hier' onclick="ControleerWoord()">
+</body>
+</html>

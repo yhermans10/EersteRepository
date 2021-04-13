@@ -1,0 +1,54 @@
+<!-- Opdracht 4:
+Maak 4 knoppen naast elkaar.
+Op de ene knop staat A, de andere B, die daarnaast C en die daarnaast D.
+
+Op het moment dat je op knop C van de knoppen klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+
+Op het moment dat je op knop D klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+U heeft op knop D geklikt.
+
+Hij houd dus jouw knop-klik history bij. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 4</title>
+    <style>
+
+    </style>
+    <script>
+                //Voer uit als op knop C gedrukt wordt
+        function knop_C(){
+            // new element maken om toe te voegen en geef het een naam
+            var div = document.createElement("div");
+                div.innerHTML = "U heeft op knop C geklikt.";
+            // Voeg het element toe als output   
+            document.getElementById("output").appendChild(div);
+        }
+
+        // Voer uit als op knop D gedrukt wordt
+        function knop_D(){
+            var div = document.createElement("div");
+                div.innerHTML = "U heeft op knop D geklikt.";  
+            document.getElementById("output").appendChild(div);
+        }
+        //Er is geen actie voor knop A en B
+    </script>
+</head>
+<body>
+    <h1> Opdracht 4: </h1>
+    <h2>Op welke knoppen is er eigenlijk geklikt?</h2>    
+    <div>Wilt u op een van de onderstaande knoppen drukken?</div>
+    <div id="output"></div>
+    <button onclick="knop_A()">A</button>    
+    <button onclick="knop_B()">B</button>
+    <button onclick="knop_C()">C</button>
+    <button onclick="knop_D()">D</button>
+
+</body>
+</html>

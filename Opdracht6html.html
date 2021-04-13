@@ -1,0 +1,53 @@
+<!-- Opdracht 6:
+Maak een afbeelding zichtbaar in je scherm.
+Maak een knop.
+Als ik op de knop klik, verandert de afbeelding naar een nieuwe afbeelding.
+
+ADVANCED: Klik door vier seizoenen heen. Plaatje van de Zomer, Herfst, Winter, Lente. 
+Na iedere winter is er 1 jaar voorbij. In de div staat na 13 keer klikken. Er zijn 3 jaren voorbij. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 6</title>
+    <style>
+        
+    </style>
+    <script>
+        var x = 1; 
+        var jaren = -1; 
+    function switchImg() {
+    if (x == 1) { //
+        document.getElementById("imgToSwitch").src = "lente.jpg";
+        x++; //Zet x op 2
+        jaren++; // Jaar + 1
+        if(jaren >= 1){ // Als de winter voorbij is, dan is er een jaar voorbij
+            document.getElementById("AantalWinters").innerHTML = "Er is " + jaren +  " jaar voorbij.";
+            }
+    } else if (x == 2) { // Als er voor de 2de keer geklikt wordt op de knop
+        document.getElementById("imgToSwitch").src = "zomer.jpg";
+        x++; //Zet x op 3
+    } else if (x == 3) { // Als er voor de 3de keer geklikt wordt op de knop
+        document.getElementById("imgToSwitch").src = "herfst.jpg";
+        x++; //Zet x op 4
+    } else if (x == 4) { // Als er voor de 4de keer geklikt wordt op de knop
+        document.getElementById("imgToSwitch").src = "winter.jpg";
+        x = 1; //zet x terug op 1
+    }
+}
+    </script>
+</head>
+<body>
+    <h1> Opdracht 6</h1>
+    <h2> VIER SEIZOENEN, VIER AFBEELDINGEN! </h2>
+    <div> Klik op de knop om naar het volgende seizoen te gaan.</div>
+    <!-- Het eerste plaatje is winter -->
+    <img src="winter.jpg" id="imgToSwitch">
+    <button type="button" onclick="switchImg()">Klik hier!</button>
+
+    <div class="AantalWinters" id="AantalWinters"></div>
+</body>
+</html>

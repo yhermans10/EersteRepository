@@ -1,0 +1,72 @@
+<!-- Opdracht 5:
+Maak 4 knoppen naast elkaar.
+Op de ene knop staat A, de andere B, die daarnaast C en die daarnaast D.
+
+Op het moment dat je op knop C van de knoppen klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+
+Op het moment dat je op knop D klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+U heeft op knop D geklikt.
+
+Hij houd dus jouw knop-klik history bij.
+Maar als je hierna op C klikt;
+Verschijnt er een alert: U heeft al een keer op C geklikt.
+en verschijnt er in een div.
+U heeft op knop C geklikt.
+U heeft op knop D geklikt.
+U heeft op knop C geklikt.
+
+ADVANCED: De alert vertelt je hoe vaak je al op C had geklikt.
+LET OP: Als je de browser refreshed is alles weer leeg. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 5</title>
+    <style>
+
+    </style>
+    <script>
+        //Voer uit als op knop C gedrukt wordt
+        var count = 0
+        function knop_C(){
+            // Tel bij elke click 1 erbij
+            count +=1
+            // new element maken om toe te voegen en geef het een naam
+            var div = document.createElement("div");
+                div.innerHTML = "U heeft op knop C geklikt.";
+            
+            // Voeg het element toe als output   
+            document.getElementById("output").appendChild(div);
+            
+            // Als er >1 is geklikt, geef dan een alert en een aantal
+            if(count > 1){
+                alert("U heeft al een keer op C geklikt, namelijk: " + count +  " keer.")
+            }
+        }
+
+        // Voer uit als op knop D gedrukt wordt
+        function knop_D(){
+            var div = document.createElement("div");
+                div.innerHTML = "U heeft op knop D geklikt.";  
+            document.getElementById("output").appendChild(div);
+        }
+        //Er is geen actie voor knop A en B
+    </script>
+</head>
+<body>
+    <h1> Opdracht 5: </h1>
+    <h2>Op iedere knop mag maar 1 keer geklikt worden!</h2>    
+    <div>Wilt u op een van de onderstaande knoppen drukken?</div>
+    <div id="output"></div>
+    <button onclick="knop_A()">A</button>    
+    <button onclick="knop_B()">B</button>
+    <button onclick="knop_C()">C</button>
+    <button onclick="knop_D()">D</button>
+
+</body>
+</html>

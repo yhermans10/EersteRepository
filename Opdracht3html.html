@@ -1,0 +1,64 @@
+<!-- Opdracht 3:
+Maak een tekst-invoerveld.
+Maak nog een tekst-invoerveld.
+Maak een knop.
+In dat invoerveld kan ik als gebruiker iets intypen.
+Dat eerste veld gebruik ik om een woord in te typen.
+
+Als ik op de knop klik, krijg ik een alert met hoe vaak de letter e er in zit.
+Zit er geen letter e in, dan gebeurd er niks.
+
+ADVANCED: in het tweede veld kan ik bepalen, van welke letter ik wil weten of die erin zit en hoe vaak. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 3</title>
+    <style>
+        label {
+            float: left;}
+        span {
+            display: block;
+            overflow: hidden;
+            padding: 0px 4px 0px 6px;}
+        input {
+            width: 20%;}
+        .button{
+            width: 100px;}
+    </style>
+    <script>
+        function CharTellen() {
+            // Vul variabelen in voor woord en letter
+            var txt = document.getElementById("InvoerWoord").value;
+            var Letter = document.getElementById("InvoerLetter").value;
+            var count = 0;
+            for(i = 0; i < txt.length; i++){
+                if (txt.charAt(i) == Letter) {
+                    // tel het aantal 
+                    count += 1;}
+            }
+            // als de letter voorkomt, geef dit weer
+            if(count > 0){
+                alert(count)
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2> Opdracht 3: "Hoe vaak zit er een E in?" </h2>
+    <div> Controleer hoeveel van een bepaalde letter in een woord staat.</div>
+
+    <label for="TekstvakWoord">Vul het woord in:</label>
+    <span>
+        <input id = "InvoerWoord" type="text" placeholder="Input"></span>
+    
+    <label for="TekstvakLetter">Vul de letter in:</label>
+    <span>
+        <input id = "InvoerLetter" type="text"placeholder="Input"></span>
+
+    <input class = "button" type = 'button' value = 'Submit' onclick="CharTellen()">
+</body>
+</html>

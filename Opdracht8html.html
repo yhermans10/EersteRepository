@@ -1,0 +1,55 @@
+<!-- Opdracht 8:
+Maak 2 afbeeldingen. AFBA en AFBB
+Op het moment dat je op AFBA klikt gaat hij een seizoen verder.
+Op het moment dat AFBA op de lente komt, verschijnt er bij AFBB een foto met lammetjes.
+Als AFBA weer van de lente afgaat, verdwijnt of verandert AFBB naar een andere foto.
+Totdat je weer op lente komt.
+etc. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 8</title>
+    <style>
+
+    </style>
+    <script>
+    var x = 1; 
+    function DoSomething(){
+        if (x == 1) { 
+            // als er lente is, laat ook de lammetjes zien
+            document.getElementById("imgToSwitch1").src = "lente.jpg";
+            document.getElementById("imgToSwitch2").src = "lammetjes.jpg" ;
+            x++; //Zet x op 2
+        } else if (x == 2) { // Als er voor de 2de keer geklikt wordt op de afbeelding
+            document.getElementById("imgToSwitch1").src = "zomer.jpg";
+            document.getElementById("imgToSwitch2").src = "dieren.jpg";
+            x++; //Zet x op 3
+        } else if (x == 3) { // Als er voor de 3de keer geklikt wordt op de afbeelding
+            document.getElementById("imgToSwitch1").src = "herfst.jpg";
+            x++; //Zet x op 4
+        } else if (x == 4) { // Als er voor de 4de keer geklikt wordt op de afbeelding
+            document.getElementById("imgToSwitch1").src = "winter.jpg";
+            x = 1; //zet x terug op 1
+        }
+        console.log(x)
+    }
+
+    </script>
+</head>
+<body>
+    <h1> Opdracht 8</h1>
+    <h2> De lente begint! </h2>
+    <div> Klik op de linker foto.</div>
+    <p>
+    <!-- afbeelding 1 -->
+    <img src="winter.jpg" id="imgToSwitch1" width="375" height="350" onclick="DoSomething()">
+
+    <!-- afbeelding 2-->
+    <img src="zomer.jpg" id="imgToSwitch2" width="375" height="350">
+    </p>
+</body>
+</html>

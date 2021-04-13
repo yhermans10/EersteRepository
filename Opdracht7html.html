@@ -1,0 +1,81 @@
+<!-- Opdracht 7:
+Maak 2 afbeeldingen zichtbaar in je scherm. AFBA en AFBB
+Maak 3 knoppen. KNA KNB KNC
+
+KNA klik je op om AFBA door de seizoenen-afbeeldingen heen te doen.
+KNB klik je op om AFBB door de seizoenen-afbeeldingen heen te doen.
+
+Op KNC klik je EN
+- als dezelfde afbeeldingen op beide plekken staan console log je (HETZELFDE)
+- als verschillende afbeeldingen op beide plekken staan console log je (NIET HETZELFDE) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 7</title>
+    <style>
+        
+    </style>
+    <script>
+    var x = 1; 
+    function switchImg1() {
+        if (x == 1) { 
+            document.getElementById("imgToSwitch1").src = "lente.jpg";
+            x++; //Zet x op 2
+        } else if (x == 2) { // Als er voor de 2de keer geklikt wordt op de knop
+            document.getElementById("imgToSwitch1").src = "zomer.jpg";
+            x++; //Zet x op 3
+        } else if (x == 3) { // Als er voor de 3de keer geklikt wordt op de knop
+            document.getElementById("imgToSwitch1").src = "herfst.jpg";
+            x++; //Zet x op 4
+        } else if (x == 4) { // Als er voor de 4de keer geklikt wordt op de knop
+            document.getElementById("imgToSwitch1").src = "winter.jpg";
+            x = 1; //zet x terug op 1
+        }
+    }
+
+    var j = 1; 
+    function switchImg2() {
+        if (j == 1) { 
+            document.getElementById("imgToSwitch2").src = "lente.jpg";
+            j++; //Zet x op 2
+        } else if (j == 2) { // Als er voor de 2de keer geklikt wordt op de knop
+            document.getElementById("imgToSwitch2").src = "zomer.jpg";
+            j++; //Zet x op 3
+        } else if (j == 3) { // Als er voor de 3de keer geklikt wordt op de knop
+            document.getElementById("imgToSwitch2").src = "herfst.jpg";
+            j++; //Zet x op 4
+        } else if (j == 4) { // Als er voor de 4de keer geklikt wordt op de knop
+            document.getElementById("imgToSwitch2").src = "winter.jpg";
+            j = 1; //zet x terug op 1
+        }
+    }
+    // controleer of afbeelding 1 hetzelfde is als afbeelding 2
+    function Vergelijk(){
+        if (x == j){
+            console.log("HETZELFDE")
+        } else{
+            console.log("NIET HETZELFDE")
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1> Opdracht 7</h1>
+    <h2> ZIJN DE AFBEELDINGEN HETZELFDE? </h2>
+    <div> Klik op de knoppen om naar het volgende seizoen te gaan.</div>
+    <!-- afbeelding 1 -->
+    <img src="winter.jpg" id="imgToSwitch1" width="375" height="350">
+    <button type="button" onclick="switchImg1()">KNA</button>
+    
+    <!-- afbeelding 2-->
+    <img src="zomer.jpg" id="imgToSwitch2" width="375" height="350">
+    <button type="button" onclick="switchImg2()">KNB</button>
+
+    <button type="button" onclick="Vergelijk()">KNC</button>
+    <div class="AantalWinters" id="AantalWinters"></div>
+</body>
+</html>
